@@ -6,17 +6,17 @@ import reducers from "reducers";
 
 // props.children -> construct from react.
 // it will receive the <Apps /> as props.children
-// destructuring allow u to defined a default value 
+// destructuring allow u to defined a default value
 export default ({ children, initialState = {} }) => {
   const store = createStore(
     reducers,
     initialState,
-    applyMiddleware(reduxPromise)
+    applyMiddleware(reduxPromise),
   );
 
   return (
     <Provider store={store}>
       {children}
-    </ Provider>
+    </Provider>
   );
 };
